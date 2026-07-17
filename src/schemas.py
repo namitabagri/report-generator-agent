@@ -47,7 +47,7 @@ class UpdateMemoryResponse(BaseModel):
 #User Intent Classification Schema
 class UserIntent(BaseModel):
     """Intent Classification to help the system understand the user's request type and route it to the appropriate agent"""
-    intent_type: str = Field(description="The classification intent")
+    intent_type: Literal["qa","summarization","calculation","others"] = Field(description="The classification intent")
     confidence: float = Field(description="Confidence score between 0 and 1")
     reasoning: str = Field(description="Explanation for the intent classification")
 
